@@ -112,8 +112,5 @@ class Choice(models.Model):
     is_correct = models.BooleanField(default=False)
 
 class Submission(models.Model):
-    enrollement_id = models.ForeignKey(Enrollment, on_delete=models.CASCADE)
-    choice_id = models.ForeignKey(Choice , on_delete=models.CASCADE)
-#    enrollment = models.ForeignKey(Enrollment, on_delete=models.CASCADE)
-#    chocies = models.ManyToManyField(Choice)
-#    Other fields and methods you would like to design
+    enrollment = models.ForeignKey(Enrollment, on_delete=models.CASCADE)
+    chocies = models.ManyToManyField(Choice)
